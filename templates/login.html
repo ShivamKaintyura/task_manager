@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Team Task Manager</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <p class="eyebrow">Welcome back</p>
+    <h1>Log in to your workspace</h1>
+
+    <label for="loginEmail">Email</label>
+    <input id="loginEmail" placeholder="you@example.com" autocomplete="email">
+
+    <label for="loginPassword">Password</label>
+    <input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password">
+
+    <button onclick="login()">Login</button>
+
+    <p class="auth-link">New here? <a href="/">Create an account</a></p>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

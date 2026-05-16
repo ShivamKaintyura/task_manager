@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Task Manager</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="app-shell">
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Team Task Manager</p>
+      <h1>Project Dashboard</h1>
+    </div>
+    <div class="user-chip">
+      <span id="currentUserName">Loading</span>
+      <small id="currentUserRole">role</small>
+      <button class="ghost-button" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-layout">
+    <section class="stats-grid" aria-label="Task summary">
+      <article class="metric-card">
+        <span>Total Tasks</span>
+        <strong id="totalTasks">0</strong>
+      </article>
+      <article class="metric-card success">
+        <span>Completed</span>
+        <strong id="completedTasks">0</strong>
+      </article>
+      <article class="metric-card warning">
+        <span>Pending</span>
+        <strong id="pendingTasks">0</strong>
+      </article>
+      <article class="metric-card danger">
+        <span>Overdue</span>
+        <strong id="overdueTasks">0</strong>
+      </article>
+    </section>
+
+    <section class="workspace-grid">
+      <div class="panel admin-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>Create Project</h2>
+          </div>
+        </div>
+        <label for="projectName">Project name</label>
+        <input id="projectName" placeholder="Website redesign">
+        <button onclick="createProject()">Create Project</button>
+      </div>
+
+      <div class="panel admin-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Tasks</p>
+            <h2>Assign Task</h2>
+          </div>
+        </div>
+        <label for="taskTitle">Task title</label>
+        <input id="taskTitle" placeholder="Build dashboard cards">
+
+        <label for="projectId">Project</label>
+        <select id="projectId"></select>
+
+        <label for="assignedTo">Assignee</label>
+        <select id="assignedTo"></select>
+
+        <label for="deadline">Deadline</label>
+        <input id="deadline" type="date">
+
+        <label for="taskStatus">Status</label>
+        <select id="taskStatus">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <button onclick="createTask()">Assign Task</button>
+      </div>
+
+      <div class="panel task-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Tracker</p>
+            <h2>Tasks</h2>
+          </div>
+          <button class="secondary-button" onclick="refreshDashboard()">Refresh</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Project</th>
+                <th>Assignee</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="taskTable">
+              <tr>
+                <td colspan="6" class="empty-state">Loading tasks...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

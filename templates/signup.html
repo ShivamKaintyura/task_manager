@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | Team Task Manager</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <p class="eyebrow">Team Task Manager</p>
+    <h1>Create your account</h1>
+
+    <label for="name">Name</label>
+    <input id="name" placeholder="Atul Kumar" autocomplete="name">
+
+    <label for="email">Email</label>
+    <input id="email" placeholder="you@example.com" autocomplete="email">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" placeholder="Create a password" autocomplete="new-password">
+
+    <label for="role">Role</label>
+    <select id="role">
+      <option value="admin">Admin</option>
+      <option value="member">Member</option>
+    </select>
+
+    <button onclick="signup()">Signup</button>
+
+    <p class="auth-link">Already have an account? <a href="/login-page">Login</a></p>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
