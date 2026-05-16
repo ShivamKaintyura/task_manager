@@ -48,8 +48,3 @@ Open `http://127.0.0.1:5000` in your browser.
 Admins can create projects, assign tasks, view all tasks, and update any task status.
 
 Members can view their assigned tasks and update the status of those tasks.
-
-## Submission
-
-- Live URL: add your deployed app URL here
-- GitHub repo: add your repository URL here
